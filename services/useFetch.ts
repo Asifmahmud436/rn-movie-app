@@ -18,7 +18,7 @@ const useFetch = <T>(fetchFunction: () => Promise<T>, autoFetch = true) => {
     } finally {
       setLoading(false);
     }
-  }, []); // ✅ Add dependency
+  }, [fetchFunction]); // ✅ Add dependency
 
   const reset = () => {
     setData(null);
